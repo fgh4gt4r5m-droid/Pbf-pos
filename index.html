@@ -11,31 +11,21 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
     html,body{height:100%;width:100%;overflow:hidden}
-    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#050508}
+    body{font-family:system-ui,-apple-system,sans-serif;background:#050508}
     #root{height:100vh;width:100%;overflow:hidden}
     ::-webkit-scrollbar{display:none}
     *{scrollbar-width:none;-ms-overflow-style:none}
-    #splash{position:fixed;inset:0;background:#050508;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:9999}
-    #splash-gem{font-size:52px}
-    #splash-title{color:#C9A84C;font-weight:900;font-size:24px;letter-spacing:4px}
-    #splash-sub{color:#555;font-size:11px;letter-spacing:2px}
-    #splash-load{color:#333;font-size:11px;margin-top:8px}
+    #splash{position:fixed;inset:0;background:#050508;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:9999;transition:opacity .5s}
   </style>
 </head>
 <body>
   <div id="splash">
-    <div id="splash-gem">&#x1F48E;</div>
-    <div id="splash-title">PBF POS</div>
-    <div id="splash-sub">PERFECT BODYFLEX &times; MCNC</div>
-    <div id="splash-load">Chargement...</div>
+    <div style="font-size:52px">&#x1F48E;</div>
+    <div style="color:#C9A84C;font-weight:900;font-size:24px;letter-spacing:4px">PBF POS</div>
+    <div style="color:#555;font-size:11px;letter-spacing:2px">PERFECT BODYFLEX &times; MCNC</div>
+    <div id="splash-msg" style="color:#333;font-size:11px;margin-top:8px">Chargement...</div>
   </div>
   <div id="root"></div>
-  <script>
-    window.addEventListener('error', function(e){
-      document.getElementById('splash-load').textContent = 'Erreur: ' + e.message;
-      document.getElementById('splash-load').style.color = '#f87171';
-    });
-  </script>
-  <script src="app.js" defer></script>
+  <script src="app.js"></script>
 </body>
 </html>
